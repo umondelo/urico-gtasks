@@ -1,0 +1,41 @@
+/***** Fonts *****/
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,400i,700,800');
+$font-reg:          'Nunito Sans', sans-serif;
+
+$text-light:        300;
+$text-bold:         700;
+$text-bolder:       800;
+
+/***** Colors *****/
+$color-white:          #ffffff;
+$color-red:            #ee4054;
+$color-red-dark:       #de142b;
+$color-grey:           #828796;
+$color-grey-light:     #ecf0f1;
+$color-grey-lighter:   #f7f7f8;
+$color-grey-dark:      #909090;
+$color-icon:           #bbbbbb;
+$color-reg-text:       #454545;
+$color-error-text:     #f44336;
+$color-body:           #F6F6F6;
+$color-border:         #e0e0e0;
+
+$max-width:         800px;
+$normal-width:      600px;
+
+/***** Spacing *****/
+$global-padding:       7px;
+$global-padding-big:   16px;
+$global-spacing:       7px;
+$line-height:       125%;
+$line-height-heading: 160%;
+$input-height:      44px;
+$small-spacing:     10px;
+$spacing:           14px;
+$big-spacing:       25px;
+
+/***** font sizes *****/
+$big-text:          20px;
+$reg-text:          16px;
+$small-text:        14px;
+$smaller-text:      13px;

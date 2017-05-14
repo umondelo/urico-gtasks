@@ -1,0 +1,25 @@
+
+ul.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li {
+    border-bottom: 1px dotted $color-border;
+    padding: $global-padding-big;
+    position: relative;
+    md-checkbox {
+      @include clearfix();
+      small {
+        position: absolute;
+        right: 0;
+        top: 25%;
+        margin-right: $global-spacing+1;
+        font-size: $smaller-text;
+        color: $color-icon;
+      }
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

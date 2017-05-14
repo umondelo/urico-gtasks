@@ -1,0 +1,53 @@
+body {
+    font-family: $font-reg;
+    position: relative;
+    background: $color-body;
+}
+
+/** Links **/
+a {
+  color: $color-red;
+  text-decoration: none;
+  &:hover {
+    color: $color-grey;
+  }
+  &:focus {
+    color: $color-red-dark;
+  }
+}
+
+table {
+    width: 100%;
+    tr {
+        th {
+            border: 1px solid red;
+            padding: 5px;
+        }
+        td {
+            padding: 5px;
+            border-bottom: 1px solid $color-grey-light;
+        }
+    }
+}
+
+// Forms
+input[type="text"] {
+  border: none;
+  padding: $global-padding/2 $global-padding;
+  width: 100%;
+}
+
+md-checkbox {
+  &.mat-checkbox-checked {
+    .mat-checkbox-label {
+      text-decoration: line-through;
+      color: $color-grey;
+    }
+  }
+}
+
+@-ms-viewport {
+  width: device-width; }
+
+@viewport {
+  width: device-width; }

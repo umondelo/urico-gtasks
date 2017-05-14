@@ -1,0 +1,80 @@
+//Clearing
+@mixin clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius !important;
+     -moz-border-radius: $radius !important;
+      -ms-border-radius: $radius !important;
+          border-radius: $radius !important;
+       -o-border-radius: $radius !important;
+}
+
+//Background Size (cover, 100%)
+@mixin bg-size($size) {
+    -webkit-background-size: $size;
+    -moz-background-size: $size;
+    -o-background-size: $size;
+    background-size: $size;
+}
+
+//Box Sizing (border-box, content-box, initial)
+@mixin box-sizing($sizing) {
+    webkit-box-sizing: $sizing;
+	-moz-box-sizing: $sizing;
+	box-sizing: $sizing;
+}
+
+@mixin box-shadow($value) {
+    -moz-box-shadow:    $value;
+    -webkit-box-shadow: $value;
+    box-shadow:         $value;
+}
+
+//to center child elements
+@mixin center-elements() {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+    background-position: center;
+}
+
+//e.g. @include calc(width, "25% - 1em");
+@mixin calc($property, $expression) {
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+//For Extenstion
+.transition {
+    -webkit-transition: color .5s, background .5s, height .5s;
+    -moz-transition: color .5s, background .5s, height .5s;
+    -o-transition: color .5s, background .5s, height .5s;
+    -ms-transition: color .5s, background .5s, height .5s;
+    transition: color .5s, background .5s, height .5s;
+}
+
+.gtasks-container {
+  background: $color-white;
+  @include box-sizing(border-box);
+  @include box-shadow(0 2px 7px rgba(35,35,35,0.125));
+  @include border-radius(8px);
+  overflow: hidden;
+}
+
+//box shadow
+.box-shadow {@include box-shadow(0 1px 3px rgba(35,35,35,0.175));}
+.box-shadow-light {@include box-shadow(0 1px 1px rgba(35,35,35,0.225));}

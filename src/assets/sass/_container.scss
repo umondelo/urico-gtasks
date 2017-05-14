@@ -1,0 +1,53 @@
+#main-container {
+  max-width: 780px;
+  margin: $global-spacing+10px;
+  header {
+    @include clearfix();
+    h1 {
+      float: left;
+    }
+    a {
+      float: right;
+    }
+  }
+  section {
+    @extend .gtasks-container;
+    header {
+      border: 1px solid $color-border;
+      background: $color-red;
+      padding: $global-padding-big;
+      input[type="text"] {
+        background: inherit;
+        color: $color-white;
+        font-size: $big-text;
+        border-bottom: 1px solid $color-red-dark;
+        &:focus {
+          color: red;
+        }
+        &::placeholder {
+          color: $color-white;
+        }
+        &:focus {
+          background: $color-white;
+        }
+      }
+    }
+    main {
+      background: $color-white;
+      border: 1px solid $color-border;
+    }
+    footer {
+      background: $color-body;
+      border: 1px solid $color-border;
+      padding: $global-padding;
+      color: $color-grey-dark;
+    }
+  }
+}
+
+@media screen and (min-width: 48.9375em) {
+  #main-container {
+    max-width: $max-width;
+    margin: 0 auto;
+  }
+}
