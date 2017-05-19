@@ -21,24 +21,17 @@ export class TasksComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    if(this.validated) {
-      return this.appService.getTasks()
-        .subscribe(
-          data => {
-            this.tasks = data.json().items;
-            console.log('Show Tasks', this.tasks);
-          });
-    }
+
   }
 
   ngOnInit() {
-    // this.appService.getAndStoreToken();
+
     // Load Default Tasks
-    this.appService.getTasks()
+    return this.appService.getTasks()
       .subscribe(
         data => {
           this.tasks = data.json().items;
-          console.log('Show Tasks', this.tasks);
+          console.log('Show Tasks again', this.tasks);
         });
   }
 

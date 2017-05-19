@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  // styleUrls: ['./app.component.scss'],
 })
 
 export class AppComponent implements OnInit, AfterViewInit {
@@ -25,23 +25,21 @@ export class AppComponent implements OnInit, AfterViewInit {
     private http: Http,
     private appService: AppService,
   ) {
-
-  }
-
-  ngOnInit() {
-
+    this._validated();
     // Get token from the callback URL
     if(!localStorage.token || localStorage.token == undefined) {
       console.log('login required');
       this.validated = false;
 
     } else {
-      // this.appService.validate();
       this.validated = true;
       this.appService.getAndStoreToken();
-      this._validated();
       console.log('You are authorised! show token', this.appService.token);
     }
+  }
+
+  ngOnInit() {
+    this.appService.getAndStoreToken();
 
   }
 
@@ -50,19 +48,11 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   _validated() {
-
     this.http.get(`${environment.googleApi.GOOGLE_VALIDATE_TOKEN_URL}` + this.appService.token)
       .toPromise()
       .then((success) => {
         this.validated = true;
         console.log('success');
-        // this.appService.getAndStoreToken();
-        // return this.appService.getTasks()
-        //   .subscribe(
-        //     data => {
-        //       this.tasks = data.json().items;
-        //       console.log('Show Tasks', this.tasks);
-        //     });
       }).catch((error) => {
         this.validated = false;
         console.log('error');
