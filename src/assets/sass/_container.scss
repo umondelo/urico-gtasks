@@ -12,6 +12,7 @@
   }
   section {
     @extend .gtasks-container;
+    margin-bottom: $big-spacing;
     header {
       border: 1px solid $color-border;
       background: $color-red;
@@ -41,6 +42,31 @@
       border: 1px solid $color-border;
       padding: $global-padding;
       color: $color-grey-dark;
+    }
+  }
+}
+
+#not-authorized {
+  border: 1px solid $color-border;
+  height: 400px;
+  background: $color-white;
+  @include border-radius(5px);
+  @include center-elements();
+  @include box-shadow(0 2px 4px rgba(25,25,25,0.125));
+  article {
+    text-align: center;
+    a {
+      font-weight: bold;
+      display: inline-block;
+      padding: $small-spacing;
+      border: 1px solid $color-red-dark;
+      background: $color-red;
+      color: $color-white;
+      @include border-radius(4px);
+      @extend .box-shadow;
+      &:hover {
+        background: $color-red-dark;
+      }
     }
   }
 }

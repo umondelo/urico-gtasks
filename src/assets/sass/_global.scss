@@ -8,6 +8,7 @@ body {
 a {
   color: $color-red;
   text-decoration: none;
+  cursor: pointer;
   &:hover {
     color: $color-grey;
   }

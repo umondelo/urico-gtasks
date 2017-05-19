@@ -33,7 +33,7 @@ export class AppService {
     }
   }
 
-  validate() {
+  validate(){
     return this.http.get(`${environment.googleApi.GOOGLE_VALIDATE_TOKEN_URL}` + this.token)
       .map((data) => {
           console.log('show data ', data, this.validated);
